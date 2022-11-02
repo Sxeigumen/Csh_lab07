@@ -65,11 +65,15 @@ namespace Csh_lab07
                     {
                         if (method.Name.Substring(0, 3) != "get" && method.Name.Substring(0, 3) != "set")
                         {
-                            mathodsNames += $"{method.Name} ";
+                            if (method.Name != "Equals" && method.Name != "GetHashCode" && method.Name != "GetType" && method.Name != "ToString")
+                            {
+                                mathodsNames += $"{method.Name} ";
+                            }
+                            //mathodsNames += $"{method.Name} ";
                         }
                             
                     }
-                    XElement methods = new XElement("Methods", mathodsNames);
+                    XElement methods = new XElement("Methods", mathodsNames); 
 
 
                     tempElement.Add(comments);
