@@ -94,6 +94,45 @@ namespace Csh_lab07
                     allEnums.Add(enums);
                     OtherElems.Add(allEnums);
                 }
+                /*
+                if(assembElems.Name == "CommentAttribute")
+                {
+                    XElement tempElement = new XElement($"{assembElems.Name}");
+                    string fieldsNames = " ";
+                    foreach (var classField in assembElems.GetFields())
+                    {
+                        fieldsNames += $"{classField.Name} ";
+                    }
+                    XElement fields = new XElement("Field", fieldsNames);
+
+                    string propsNames = " ";
+                    foreach (var property in assembElems.GetProperties())
+                    {
+                        propsNames += $"{property.Name} ";
+                    }
+                    XElement properties = new XElement("Proporties", propsNames);
+
+                    string mathodsNames = " ";
+                    foreach (var method in assembElems.GetMethods())
+                    {
+                        if (method.Name.Substring(0, 3) != "get" && method.Name.Substring(0, 3) != "set")
+                        {
+                            if (method.Name != "Equals" && method.Name != "GetHashCode" && method.Name != "GetType" && method.Name != "ToString")
+                            {
+                                mathodsNames += $"{method.Name} ";
+                            }
+                            //mathodsNames += $"{method.Name} ";
+                        }
+
+                    }
+                    XElement methods = new XElement("Methods", mathodsNames);
+
+                    tempElement.Add(fields);
+                    tempElement.Add(properties);
+                    tempElement.Add(methods);
+                    OtherElems.Add(tempElement);
+                }
+                */
             }
             OtherElems.Add(ClassElems);
             xDoc.Add(OtherElems);
